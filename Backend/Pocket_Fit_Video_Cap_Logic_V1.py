@@ -12,11 +12,8 @@ save_directory_path = "/Users/farnazinnia/Pocket-Fit/image_data_save"
 
 app = Flask(__name__)
 CORS(app)
-CORS(app)
 
 # Initialize video capture from the default webcam
-camera_index = int(sys.argv[1]) if len(sys.argv) > 1 else 0
-cap = cv2.VideoCapture(camera_index)
 camera_index = int(sys.argv[1]) if len(sys.argv) > 1 else 0
 cap = cv2.VideoCapture(camera_index)
 
