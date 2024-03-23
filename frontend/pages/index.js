@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Welcome to the Video Snapshot App</h1>
+      <h1>Pocket Fit</h1>
       <div className={styles.container}>
         {/* Use the traditional src attribute for MJPEG stream */}
         <img ref={imgRef} width="100%" height="100%" alt="Video Stream" />

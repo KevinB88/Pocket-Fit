@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: myFont;
-    src:url(font.ttf);
+    src:url(/Users/farnazinnia/Pocket-Fit/Backend/templates/font.ttf);
 }
 
 body {
     background-color: #1a1a1c;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,38 +15,50 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: white;
+    overflow: hidden;
 }
 
 h1 {
-    color: white;
     font-family: myFont;
-    margin: 0;
-    font-weight: bolder;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 button {
     cursor: pointer;
     color: #fff;
     background-color: #c1083f;
-    border: 1px solid #6e2232;
-    border-radius: 50%; /* Make the button round */
-    width: 50px; /* Equal width and height */
-    height: 50px; /* Equal width and height */
-    padding: 0; /* Adjust padding as needed */
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 13px; /* Adjust font size as needed */
-    display: flex; /* Use flexbox to center content */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    font-size: 1rem;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    transition: background-color 0.3s; /* Smooth transition for background color */
-    overflow: hidden; /* Prevents content from spilling outside the border-radius */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;
 }
 
 button:hover {
     background-color: rgba(189, 72, 106, 0.91);
+    transform: scale(1.05);
 }
 
 :root {
-    --clr-dark: #c1083f; /* or any color you prefer */
+    --clr-dark: #c1083f;
 }
