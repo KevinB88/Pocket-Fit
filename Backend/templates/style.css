@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+@font-face {
+    font-family: myFont;
+    src:url(font.ttf);
+}
+body {
+    background-color: #1a1a1c;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.outer-div{
+    padding: 50px;
+    background-color: blue;
+}
+
+.box {
+    border: 5px solid green; /* Adjust border width and color as needed */
+    width: 80vw; /* 80% of the viewport width */
+    height: 80vh; /* 80% of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-family: myFont;
+    margin: 0;
+    font-weight: bolder;
+}
+
+form {
+    margin-top: 20px;
+}
+
+
+
+button {
+    cursor: pointer;
+    color: #fff;
+    background-color: #c1083f;
+    border: 1px solid #6e2232;
+    border: 0;
+    padding: 10px 40px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0 auto;
+    display: block;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    transition: transform 1000ms; /*this is how fast it would go back*/
+}
+
+
+button:hover {
+    background-color: rgba(189, 72, 106, 0.91);
+}
+
+:root {
+    --clr-dark: white; /* or any color you prefer */
+}
+
+
+.line {
+  width: 100%;  /* Set the width to span the full page */
+  height: 1px;  /* Set the height for a thin line */
+  background-color: #ccc;  /* Set the background color (adjust as needed) */
+}
+
+.h1{
+    font-family: sans-seriff;
+    color: #fff;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 80px;
+    max-width: 600px;
+    position: relative;
+    }
+
+    h1:before{
+        content: "";
+        display:block;
+        width: 120px;
+        height: 2px;
+        color: #fff;
+        position: absolute;
+    }
+
+.container {
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+    border: 10px solid var(--clr-dark);
+}
+
