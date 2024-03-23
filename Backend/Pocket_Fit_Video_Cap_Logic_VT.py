@@ -5,7 +5,7 @@ import time
 app = Flask(__name__)
 
 # face_cascade = cv2.CascadeClassifier('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/TensorFlow/TensorFlow/OpenCV/HaarCascade_XML-Files/haarcascade_frontalface_default.xml')
-face_cascade = cv2.CascadeClassifier('/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Project_Repo/PocketFit/Pocket-Fit/HaarCascade_XML-Files/haarcascade_frontalface_alt2.xml')
+face_cascade = cv2.CascadeClassifier('/PocketFit/Pocket-Fit/HaarCascade_XML-Files/haarcascade_frontalface_alt2.xml')
 
 # Initialize video capture from the default webcam
 cap = cv2.VideoCapture(1)
