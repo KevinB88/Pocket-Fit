@@ -1,12 +1,12 @@
 # This file takes snapshots by control of the user. Pressing 'S' to take a snapshot
 
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, jsonify, send_from_directory
 import cv2
 import time
 import datetime
 import os
 
-save_directory_path = "/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Project_Repo/PocketFit/Pocket-Fit/image_data_save"
+save_directory_path = "/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Pocket-Fit/image_data_save"
 
 if not os.path.exists(save_directory_path):
     os.makedirs(save_directory_path)
@@ -17,6 +17,18 @@ app = Flask(__name__)
 cap = cv2.VideoCapture(1)
 
 current_frame = None
+
+
+@app.route('/images/<filename>')
+def serve_image(filename):
+    return send_from_directory('/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Pocket-Fit/image_data_save', filename)
+
+
+@app.route('/get-images', methods=['GET'])
+def get_images():
+    image_directory = '/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Pocket-Fit/image_data_save'
+    images = [img for img in os.listdir(image_directory) if img.endswith((".png", ".jpg", "jpeg"))]
+    return jsonify(images)
 
 
 @app.route('/take_snapshot', methods=['POST'])
@@ -76,20 +88,3 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 
-'''
-    Additional steps to take:
-    Allow the user to take a snapshot of an image on screen
-    with the press of a button.
-    
-    Store the images to a directory for the moment being.
-    
-    The overall purpose:
-    The user will take a snapshot and then the
-    AI model will determine the article of clothing 
-    present within the provided image.
-    
-    the image is loaded from the provided directory. 
-    And the output is made onto the same screen. 
-    
-
-'''
