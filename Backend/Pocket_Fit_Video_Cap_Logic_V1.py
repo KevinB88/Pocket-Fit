@@ -1,20 +1,21 @@
 # This file takes snapshots by control of the user. Pressing 'S' to take a snapshot
 
 from flask import Flask, Response, render_template
+from flask_cors import CORS
+import sys
 import cv2
 import time
 import datetime
 import os
 
-save_directory_path = "/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Project_Repo/PocketFit/Pocket-Fit/image_data_save"
-
-if not os.path.exists(save_directory_path):
-    os.makedirs(save_directory_path)
+save_directory_path = "/Users/farnazinnia/Pocket-Fit/image_data_save"
 
 app = Flask(__name__)
+CORS(app)
 
 # Initialize video capture from the default webcam
-cap = cv2.VideoCapture(1)
+camera_index = int(sys.argv[1]) if len(sys.argv) > 1 else 0
+cap = cv2.VideoCapture(camera_index)
 
 current_frame = None
 
