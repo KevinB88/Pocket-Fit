@@ -7,26 +7,14 @@
 <body>
     <h1>Live Video Feed!</h1>
     <button id="activateButton">Activate Camera</button>
+    <button id="loadImagesButton">Load Image</button>
+    <div id="imageContainer"></div>
+    <div id="imageModal" style="display:none;">
+        <span id="closeModal" style="cursor:pointer;">&times; Close</span>
+        <img id="modalContent" style="max-width:100%;">
+    </div>
     <img id="videoFeed" src="{{ url_for('video_feed') }}" width="640" height="480" style="display:none;"/>
     <button id="snapshotBtn" style="display:none;">Take Snapshot</button>
-    <script>
-    document.getElementById('activateButton').onclick = function() {
-        var videoFeed = document.getElementById('videoFeed');
-        videoFeed.style.display = "block";  // Show the video feed
-        document.getElementById('snapshotBtn').style.display = "inline";
-        this.style.display = "none";  // Hide the activate button
-    };
-     document.getElementById('snapshotBtn').onclick = function(){
-        fetch ('/take_snapshot', {method: 'POST'})
-            .then(response => {
-                if(response.ok){
-                    return response.text();
-                }
-                   throw new Error('Request failed.');
-            })
-            .then(data => alert("Snapshot taken!"))
-            .catch(error => console.error(error));
-        };
-    </script>
+    <script src="static/js/camera.js"></script>
 </body>
 </html>

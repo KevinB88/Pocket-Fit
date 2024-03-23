@@ -17,3 +17,28 @@ document.getElementById('snapshotBtn').onclick = function(){
         .then(data => alert("Snapshot taken!"))
         .catch(error => console.error(error));
 };
+
+document.getElementById('loadImagesButton').addEventListener('click', function(){
+    fetch('/get-images')
+        .then(response => response.json())
+        .then(images => {
+            const container = document.getElementById('imageContainer');
+            container.innerHTML = '';
+            images.forEach(img => {
+                const imgElement = document.createElement('img');
+                imgElement.src = `/images/${img}`;
+                imgElement.style.width = '100px';
+                imgElement.style.cursor = 'pointer';
+                imgElement.onclick = function(){
+                    document.getElementById('modalContent').src = imgElement.src;
+                    document.getElementById('imageModal').style.display = 'block';
+                };
+                container.appendChild(imgElement);
+            });
+        })
+        .catch(error => console.error('Error loading images:', error));
+
+        document.getElementById('closeModal').onclick = function(){
+            document.getElementById('imageModal').style.display = 'none';
+        };
+});
