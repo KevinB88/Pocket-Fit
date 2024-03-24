@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import styles from '../css/Home.module.css';
 
 export default function Home() {
   const imgRef = useRef(null);
@@ -27,8 +28,10 @@ export default function Home() {
   return (
     <div>
       <h1>Welcome to the Video Snapshot App</h1>
-      {/* Use the traditional src attribute for MJPEG stream */}
-      <img ref={imgRef} width="640" height="480" alt="Video Stream" />
+      <div className={styles.container}>
+        {/* Use the traditional src attribute for MJPEG stream */}
+        <img ref={imgRef} width="100%" height="100%" alt="Video Stream" />
+      </div>
       <button onClick={takeSnapshot}>Take Snapshot</button>
       {message && <p>{message}</p>}
     </div>
