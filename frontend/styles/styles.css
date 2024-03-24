@@ -17,6 +17,7 @@ body {
     height: 100vh;
     color: white;
     overflow: hidden;
+    perspective: 1000px;
 }
 
 h1 {
@@ -27,11 +28,13 @@ h1 {
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeIn 2s forwards;
+    transform: rotateX(90deg);
+    transform-origin: top;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-20px) rotateX(90deg); }
+    to { opacity: 1; transform: translateY(0) rotateX(0); }
 }
 
 button {
@@ -52,13 +55,15 @@ button {
     margin-top: 2rem;
     opacity: 0;
     animation: fadeIn 2s 1s forwards;
+    transform: rotateY(90deg);
+    transform-origin: left;
 }
 
 button:hover {
     background-color: rgba(189, 72, 106, 0.91);
-    transform: scale(1.05);
+    transform: scale(1.05) rotateY(0);
 }
 
 :root {
-    --clr-dark: #c1083f; /* or any color you prefer */
+    --clr-dark: #c1083f;
 }
