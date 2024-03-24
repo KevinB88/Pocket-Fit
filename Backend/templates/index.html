@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Camera Feed</title>
+</head>
+<body>
+    <h1>Live Video Feed!</h1>
+    <button id="activateButton">Activate Camera</button>
+    <button id="loadImagesButton">Load Image</button>
+    <div id="imageContainer"></div>
+    <div id="imageModal" style="display:none;">
+        <span id="closeModal" style="cursor:pointer;">&times; Close</span>
+        <img id="modalContent" style="max-width:100%;">
+    </div>
+    <img id="videoFeed" src="{{ url_for('video_feed') }}" width="640" height="480" style="display:none;"/>
+    <button id="snapshotBtn" style="display:none;">Take Snapshot</button>
+    <script src="static/js/camera.js"></script>
+</body>
+</html>

@@ -47,15 +47,24 @@ button {
     color: #fff;
     background-color: #c1083f;
     border: 1px solid #6e2232;
-    border: 0;
-    padding: 10px 40px;
+    border-radius: 50%; /* Make the button round */
+    width: 50px; /* Equal width and height */
+    height: 50px; /* Equal width and height */
+    padding: 0; /* Adjust padding as needed */
     font-family: 'Ubuntu', sans-serif;
-    margin: 0 auto;
-    display: block;
-    font-size: 13px;
+    font-size: 13px; /* Adjust font size as needed */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    transition: transform 1000ms; /*this is how fast it would go back*/
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    overflow: hidden; /* Prevents content from spilling outside the border-radius */
 }
+
+button:hover {
+    background-color: rgba(189, 72, 106, 0.91);
+}
+
 
 
 button:hover {
@@ -63,7 +72,7 @@ button:hover {
 }
 
 :root {
-    --clr-dark: white; /* or any color you prefer */
+    --clr-dark: #c1083f; /* or any color you prefer */
 }
 
 
@@ -76,10 +85,10 @@ button:hover {
 .h1{
     font-family: sans-seriff;
     color: #fff;
-    margin: 50px auto;
+    margin: 30px auto;
     text-align: center;
     font-size: 80px;
-    max-width: 600px;
+    max-width: 500px;
     position: relative;
     }
 
@@ -97,5 +106,5 @@ button:hover {
     height: 600px;
     margin: 0 auto;
     border: 10px solid var(--clr-dark);
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0); /* Horizontal offset, vertical offset, blur radius, spread radius, and color */
 }
-
