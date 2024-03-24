@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Live Camera Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
+
 <body>
-    <h1>Live Video Feed!</h1>
-    <button id="activateButton">Activate Camera</button>
+
+    <div class="title">
+        <h3>Pocket Fit</h3>
+    </div>
+    <div class="line-container">
+        <div class ="item 1"></div>
+        <div class ="line">
+            <u></u>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+    <button id="activateButton">📷</button>
     <button id="loadImagesButton">Load Image</button>
+    </div>
+
     <div id="imageContainer"></div>
     <div id="imageModal" style="display:none;">
         <span id="closeModal" style="cursor:pointer;">&times; Close</span>
@@ -16,5 +36,10 @@
     <img id="videoFeed" src="{{ url_for('video_feed') }}" width="640" height="480" style="display:none;"/>
     <button id="snapshotBtn" style="display:none;">Take Snapshot</button>
     <script src="static/js/camera.js"></script>
+
+
+
+
+
 </body>
 </html>

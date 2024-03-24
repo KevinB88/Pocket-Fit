@@ -27,13 +27,25 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Pocket Fit</h1>
+      <div>
+    <div>
+        <h1 className={styles.title}>Pocket <br /> Fit</h1>
+      </div>
+      <div className={styles['line-container']}>
+        <div className={styles.lineitem1}></div>
+        <div className={styles.titleline}>
+          <u></u>
+        </div>
+      </div>
+      </div>
+    <div>
       <div className={styles.container}>
         {/* Use the traditional src attribute for MJPEG stream */}
         <img ref={imgRef} width="100%" height="100%" alt="Video Stream" />
       </div>
       <button onClick={takeSnapshot}>Take Snapshot</button>
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 }

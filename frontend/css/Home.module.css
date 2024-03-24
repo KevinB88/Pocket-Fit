@@ -1,6 +1,48 @@
+.title {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 45px;
+  margin: 30px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.title::before, .title::after {
+  content: "";
+  display: block;
+  width: 100px; /* Adjust this to match the desired length */
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%; /* Position at the vertical center of the title */
+  transform: translateY(-50%); /* Center vertically */
+}
+
+.title::before {
+  left: calc(-100px - 20px); /* Move to the left of the title */
+}
+
+.title::after {
+  right: calc(-100px - 20px); /* Move to the right of the title */
+}
+
+
+
+.line{
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  border: 10px solid var(--clr-dark);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+}
+
 .container {
-  width: 120vh;
-  height: 70vh; /* Adjust this to change the height of the rectangle */
+  width: 65vw;
+  height: 65vh; /* Adjust this to change the height of the rectangle */
   margin: 0 auto;
   border: 10px solid var(--clr-dark);
   box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
