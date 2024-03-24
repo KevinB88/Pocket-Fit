@@ -1,12 +1,7 @@
 .container {
-  width: 120vh;
-  height: 70vh; /* Adjust this to change the height of the rectangle */
+  width: 80%;
+  height: 600px;
   margin: 0 auto;
   border: 10px solid var(--clr-dark);
-  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
-  position: relative;
-  display: flex; /* Add this to center the content of the container */
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0); /* Horizontal offset, vertical offset, blur radius, spread radius, and color */
 }
