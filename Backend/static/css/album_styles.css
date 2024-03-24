@@ -1,0 +1,62 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Set a light gray background color */
+}
+
+/* Set modern font family and center text */
+body {
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+    text-align: center; /* Center-align text */
+}
+
+/* Container for the image gallery */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Spacing between grid items */
+    padding: 20px; /* Padding around the container */
+}
+
+/* Style for each image in the gallery */
+.album-image {
+    width: 100%; /* Ensure images fill grid cells horizontally */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    border-radius: 8px; /* Add border radius for modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Hover effect for images */
+.album-image:hover {
+    transform: scale(1.05); /* Scale image on hover */
+}
+
+/* Expanded image style */
+.album-image.expanded {
+    transform: scale(0.8); /* Scale image when expanded */
+    z-index: 1; /* Ensure expanded image is on top */
+    border: 2px solid black; /* Add border to expanded image */
+    position: absolute; /* Position the expanded image absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Center expanded image */
+}
+
+/* Jiggle animation */
+/*@keyframes jiggle {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(10deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.album-image.expanded {
+    animation: jiggle 0.5s ease; /* Apply jiggle animation */
+}*/

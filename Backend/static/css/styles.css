@@ -1,0 +1,18 @@
+/* CSS styles for centering the video feed */
+/*#videoFeedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#videoFeed {
+    max-width: 100%;
+    max-height: 100%;
+}*/
+
+/* CSS styles for the pop-up animation on image hover */
+#imageContainer img:hover {
+    transform: scale(1.1); /* Scale up the image by 10% on hover */
+    transition: transform 0.3s ease; /* Smooth transition over 0.3 seconds */
+}

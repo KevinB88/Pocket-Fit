@@ -19,6 +19,13 @@ cap = cv2.VideoCapture(1)
 current_frame = None
 
 
+@app.route('/album')
+def album():
+    image_directory = '/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Pocket-Fit/image_data_save'
+    images = [img for img in os.listdir(image_directory) if img.endswith((".png", ".jpg", "jpeg"))]
+    return render_template('album.html', images=images)
+
+
 @app.route('/images/<filename>')
 def serve_image(filename):
     return send_from_directory('/Users/kbedoya88/Desktop/PROJECTS24/Ivy_Hacks_2024/Pocket-Fit/image_data_save', filename)
@@ -88,3 +95,10 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 
+'''
+    additional features to consider:
+    
+    generating a link for an album of photos.
+    
+
+'''

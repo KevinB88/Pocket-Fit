@@ -1,4 +1,3 @@
-// camera.js
 document.getElementById('activateButton').onclick = function() {
     var videoFeed = document.getElementById('videoFeed');
     videoFeed.style.display = "block";  // Show the video feed
@@ -33,12 +32,32 @@ document.getElementById('loadImagesButton').addEventListener('click', function()
                     document.getElementById('modalContent').src = imgElement.src;
                     document.getElementById('imageModal').style.display = 'block';
                 };
+
+                // Add event listener for image deletion
+                imgElement.addEventListener('contextmenu', function(event) {
+                    event.preventDefault();
+                    // Prompt user for confirmation before deleting the image
+                    if (confirm("Are you sure you want to delete this image?")) {
+                        // Send request to delete image
+                        fetch(`/delete-image/${img}`, {method: 'DELETE'})
+                            .then(response => {
+                                if (response.ok) {
+                                    // Reload images after deletion
+                                    document.getElementById('loadImagesButton').click();
+                                } else {
+                                    throw new Error('Failed to delete image');
+                                }
+                            })
+                            .catch(error => console.error('Error deleting image:', error));
+                    }
+                });
+
                 container.appendChild(imgElement);
             });
         })
         .catch(error => console.error('Error loading images:', error));
 
-        document.getElementById('closeModal').onclick = function(){
-            document.getElementById('imageModal').style.display = 'none';
-        };
+    document.getElementById('closeModal').onclick = function(){
+        document.getElementById('imageModal').style.display = 'none';
+    };
 });

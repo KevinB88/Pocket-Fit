@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snapshot Album</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/album_styles.css')}}">
+</head>
+<body>
+    <h1>Snapshot Album</h1>
+    <div class="image-container">
+        {% for image in images %}
+            <!-- Add class="album-image" to apply styles -->
+            <img src="{{ url_for('serve_image', filename=image) }}" alt="Snapshot" class="album-image">
+        {% endfor %}
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='js/album.js') }}"></script>
+</body>
+</html>

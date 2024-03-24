@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8009381e-37c2-4f35-b594-ff73b084aa43" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_163923.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_163931.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_165816.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_165824.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/static/css/album_styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/static/js/album.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/templates/album.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_192237.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_data_save/snapshot_20240323_204638.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/Pocket_Fit_Video_Cap_Logic_V1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Pocket_Fit_Video_Cap_Logic_V1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/static/js/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/static/js/camera.js" afterDir="false" />

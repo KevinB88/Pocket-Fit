@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Live Camera Feed</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
 </head>
 <body>
     <h1>Live Video Feed!</h1>
@@ -16,5 +17,6 @@
     <img id="videoFeed" src="{{ url_for('video_feed') }}" width="640" height="480" style="display:none;"/>
     <button id="snapshotBtn" style="display:none;">Take Snapshot</button>
     <script src="static/js/camera.js"></script>
+    <a href="/album">View Album</a>
 </body>
 </html>
